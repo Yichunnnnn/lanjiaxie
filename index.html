@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 声明文档编码格式为UTF-8，确保中文正常显示 -->
+    <meta charset="UTF-8">
+    <!-- 视口设置：适配移动端设备，宽度=device-width（跟随设备屏幕宽度），初始缩放比例1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页标题：蓝夹缬 -->
+    <title>蓝夹缬</title>
+    <!-- 引入外部CSS样式表，用于统一控制网页样式 -->
+    <link rel="stylesheet"href="style.css">
+    <!--引入字体图标库：Font Awesome 6.0，用于展示各类图标 -->
+    <link href-"https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel-"stylesheet")
+</head>
+<body>
+    <!-- 导航栏模块：用于页面内导航跳转，展示网站核心栏目 -->
+    <header class="main-nav">
+        <!-- 网站Logo：展示网站主题（非遗.蓝夹缬） -->
+        <div class="logo">非遗.蓝夹缬</div>
+        <!-- 导航链接列表：存放各功能页面入口 -->
+        <ul class="nav-links">
+            <!-- 导航项：点击触发navTo函数跳转至首页，active类表示当前激活状态 -->
+            <li onclick="navTo('home')" class="active">首页</li>
+            <li onclick="navTo('patterns')">图案构成</li>
+            <li onclick="navTo('history')">发展历史</li>
+            <li onclick="navTo('process')">制作过程</li>
+            <li onclick="navTo('protection')">保护状况</li>
+            <li onclick="navTo('contact')">联系我们</li>
+        </ul>
+    </header>
+
+    <!-- 主内容区域：存放网站所有核心内容板块 -->
+    <main>
+        <!-- 1. 首页板块：id=home用于导航定位，page-section统一类名，active表示默认显示 -->
+        <section id="home" class="page-section active" style="min-height: 100vh; padding: 0;">
+            <!-- 全屏背景容器：包含Canvas动画和首页核心文案 -->
+            <div class="home-header-bg">
+                <!-- Canvas元素：用于绘制动态背景动画 -->
+                <canvas id="bgCanvas"></canvas>
+                <!-- 首页英雄文案容器：展示核心宣传语 -->
+                <div class="home-hero-text">
+                    <h1>千年蓝韵</h1>
+                    <p style="color: #eee; text-align: center; font-size: 24px; text-indent: 0;">中国传统印染活化石 • 国家级非物质文化遗产</p>
+                    <!-- 按钮容器：点击跳转至图案构成板块 -->
+                    <div style="margin-top: 40px; font-family: 'Heiti SC', 'Noto Sans SC', sans-serif;">
+                        <span style="border: 1px solid #fff; padding: 10px 30px; cursor: pointer;" onclick="navTo('patterns')">探索纹样</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 内容容器：统一控制内容宽度和内边距 -->
+            <div class="container" style="padding-top: 60px;">
+                <!-- 内容块：存放首页概述文本和图片 -->
+                <div class="content-block">
+                    <h2>概述</h2>
+                    <p>蓝夹缬（xié），是中国传统印染“四缬”技艺之一。它以靛青为染料，用两片纹样对称的木板夹住织物进行染色，花纹蓝白分明，古朴典雅。不同于蜡染和扎染，蓝夹缬能够印制出极其复杂、精细的图案，且保留了长卷式的连续纹样。</p>
+                    <p>温州地区是蓝夹缬技艺保存最为完整的地区，这里的蓝夹缬被面曾经是浙南农村婚嫁必备的嫁妆。随着现代纺织工业的发展，这一古老技艺一度濒临失传，但在非遗保护者的努力下，它正在焕发新的生机。</p>
+                    <br><br>
+                    <!-- 细节展示图片：直观呈现蓝夹缬工艺细节 -->
+                    <img src="image/home-detail.jpg" alt="细节展示">
+                    <br><br>
+                    <p>蓝夹缬的独特之处在于其“夹”的工艺。花版雕刻是关键，通常选用坚硬的棠梨木或红枫木，雕刻出阳刻和阴刻两块版，要求纹丝合缝。这种工艺使得染料只能渗透进未被夹紧的沟槽中，形成蓝底白花的图案，线条清晰，具有极高的艺术价值。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 图案构成板块：id=patterns用于导航定位，采用Grid网格布局展示纹样 -->
+        <section id="patterns" class="page-section">
+            <!-- 图案板块头部横幅：展示板块标题 -->
+            <div class="pattern-header">
+                <div class="pattern-header-title">纹样与审美</div>
+            </div>
+
+            <div class="container">
+                <div class="content-block">
+                    <p>蓝夹缬的纹样题材广泛，主要以戏曲人物为主，辅以花鸟瑞兽。这些图案不仅具有装饰性，更蕴含着丰富的文化寓意和民间信仰。</p>
+                    <p>蓝夹缬上的图案受到历史、地域、环境等文化的影响，展现出当地的风土人情与文化价值。清代晚期至民国中期，浙江温州地区女儿出嫁时便会用蓝夹缬制成的被子作陪嫁，蓝夹缬成为重要的礼仪用品，其图案也多为传统吉祥图案，有花鸟鱼虫、植物组合、戏曲传说......祝愿夫妻生活美满幸福、早生贵子等。</p>
+                </div>
+
+                <!-- Grid网格画廊：用于展示纹样图片，实现多列布局 -->
+                <div class="grid-gallery">
+                    <!-- Grid网格项：点击触发openLightbox函数，实现图片放大预览（Lightbox效果） -->
+                    <div class="grid-item" onclick="openLightbox('image/工农兵.jpg')">
+                        <img src="image/工农兵.jpg" alt="工农兵">
+                        <div class="grid-desc">工农兵</div>
+                    </div>
+                    <div class="grid-item" onclick="openLightbox('image/状元及第.png')">
+                        <img src="image/状元及第.png" alt="状元及第">
+                        <div class="grid-desc">状元及第</div>
+                    </div>
+                    <div class="grid-item" onclick="openLightbox('image/凤求凰.jpg')">
+                        <img src="image/凤求凰.jpg" alt="凤求凰">
+                        <div class="grid-desc">凤求凰</div>
+                    </div>
+                    <div class="grid-item" onclick="openLightbox('image/缬茧.蝶生.jpg')">
+                        <img src="image/缬茧.蝶生.jpg" alt="缬茧.蝶生">
+                        <div class="grid-desc">缬茧.蝶生</div>
+                    </div>
+                     <div class="grid-item" onclick="openLightbox('image/衍生产品.jpg')">
+                        <img src="image/衍生产品.jpg" alt="衍生产品">
+                        <div class="grid-desc">衍生产品</div>
+                    </div>
+                     <div class="grid-item" onclick="openLightbox('image/蓝夹缬被面.jpg')">
+                        <img src="image/蓝夹缬被面.jpg" alt="蓝夹缬被面">
+                        <div class="grid-desc">蓝夹缬被面</div>
+                    </div>
+                </div>
+
+                <div class="content-block" style="margin-top: 40px;">
+                     <p>构图上，蓝夹缬多采用对称布局，这是由对折夹染的工艺特性决定的。这种对称美符合中国传统文化的审美习惯，给人以庄重、平衡之感。而在色彩上，单一的蓝白两色，却通过线条的疏密变化，表现出丰富的层次感。</p>
+                     <p>现代设计师也常从蓝夹缬中汲取灵感，将其纹样解构、重组，应用在时装、家居用品上，使古老的纹样焕发出时尚的光彩。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 发展历史板块：id=history用于导航定位，采用Timeline时间轴布局 -->
+        <section id="history" class="page-section">
+            <!-- 历史板块头部：仿古籍竖排样式，增强文化氛围 -->
+            <div class="history-header">
+                <div class="history-title-vertical">历史沿革</div>
+                <div class="history-seal">印染</div>
+            </div>
+
+            <div class="container">
+                <!-- 引用诗句：增强历史厚重感 -->
+                <p style="text-align: center; margin-bottom: 50px;">
+                    “成都新夹缬，梁汉碎罗花。” —— [唐] 白居易
+                </p>
+
+                <!-- 时间轴容器：展示蓝夹缬不同历史时期的发展状况 -->
+                <div class="timeline">
+                    <!-- 时间轴项目：scroll-reveal类用于滚动显示动画效果 -->
+                    <div class="tl-item scroll-reveal">
+                        <div class="tl-content">
+                            <h3>秦汉时期</h3>
+                            <p>夹缬工艺初见端倪。据《二仪实录》记载，秦汉时期已出现夹缬印染技术，主要用于丝织品。</p>
+                        </div>
+                    </div>
+                    <div class="tl-item scroll-reveal">
+                        <div class="tl-content">
+                            <h3>唐代（鼎盛）</h3>
+                            <p>唐代是夹缬的黄金时代。此时的夹缬色彩丰富，称为“五彩夹缬”，是宫廷和贵族喜爱的服饰面料。敦煌莫高窟出土的丝织品中便有精美的夹缬实物。</p>
+                        </div>
+                    </div>
+                    <div class="tl-item scroll-reveal">
+                        <div class="tl-content">
+                            <h3>宋元时期</h3>
+                            <p>宋代官方对服饰颜色有严格规定，加之印染技术的变化，复色的五彩夹缬逐渐减少，单色的蓝夹缬开始在民间流行。</p>
+                        </div>
+                    </div>
+                    <div class="tl-item scroll-reveal">
+                        <div class="tl-content">
+                            <h3>明清时期</h3>
+                            <p>随着棉花的普及，蓝夹缬在浙江温州、台州等地落地生根，成为民间婚嫁习俗的重要组成部分。温州蓝夹缬以其独特的戏曲纹样而著称。</p>
+                        </div>
+                    </div>
+                    <div class="tl-item scroll-reveal">
+                        <div class="tl-content">
+                            <h3>近现代</h3>
+                            <p>20世纪70年代后，受化学染料和机械印染的冲击，传统作坊纷纷倒闭。直到21世纪初，蓝夹缬被列入国家级非物质文化遗产名录，才重新受到世人关注。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block" style="text-align: center;">
+                    <p>蓝夹缬的历史见证了中国古代纺织印染技术的辉煌与变迁。它不仅是一种技艺，更是一段流动的历史。</p>
+                    <p>如今，在温州瑞安、苍南等地的少数村落，依然有老艺人坚守着染缸，传承着这份千年的记忆。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 制作过程板块：id=process用于导航定位，采用Flex弹性布局 + 手风琴折叠面板 -->
+        <section id="process" class="page-section">
+            <!-- 制作过程头部：左右分栏样式，突出工匠精神主题 -->
+            <div class="process-header">
+                <div class="ph-left"></div>
+                <div class="ph-right">
+                    <h1>工匠精神</h1>
+                    <p style="color:#dceeff; text-indent:0; font-size:20px;">十七道工序的坚持</p>
+                    <p style="color:#fff; text-indent:0;">种蓝、制靛、雕版、夹染，每一步都不可或缺。</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- 核心原料标题：介绍蓝夹缬染料原料板蓝根 -->
+                <h2>核心原料：板蓝根（马蓝）</h2>
+                <!-- 手风琴折叠面板容器：点击展开/折叠原料制作步骤 -->
+                <div class="accordion-wrap">
+                    <div class="acc-item">
+                        <!-- 手风琴头部：点击触发toggleAcc函数，控制面板展开/折叠 -->
+                        <div class="acc-header" onclick="toggleAcc(this)">Step 1: 种植与采收 <span style="float:right">+</span></div>
+                        <!-- 手风琴内容体：默认隐藏，展开后显示详细内容 -->
+                        <div class="acc-body">
+                            <p>温州蓝夹缬使用的染料植物主要是马蓝，俗称板蓝根。一般在春季扦插，喜阴湿环境。到了秋季霜降前后，叶片肥厚深绿，此时割取蓝草，出靛率最高。</p>
+                        </div>
+                    </div>
+                    <div class="acc-item">
+                        <div class="acc-header" onclick="toggleAcc(this)">Step 2: 浸泡与打靛 <span style="float:right">+</span></div>
+                        <div class="acc-body">
+                            <p>将收割的蓝草浸泡在水缸中，待叶腐烂、蓝靛素溶出后，捞去枝叶渣滓。随后加入适量石灰乳，用木耙用力上下抽动搅拌，使靛蓝氧化沉淀。这一过程称为“打靛”，极考究功力。</p>
+                        </div>
+                    </div>
+                    <div class="acc-item">
+                        <div class="acc-header" onclick="toggleAcc(this)">Step 3: 靛泥养护 <span style="float:right">+</span></div>
+                        <div class="acc-body">
+                            <p>沉淀后的靛泥需要妥善保存。染色前，需用米酒、麦芽糖等作为培养基，帮助发酵还原，使靛蓝成为可溶性的隐色体，方能上染棉布。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>制作流程图解</h2>
+                <p>现存温州地区蓝夹缬制作工艺大致可分为5个步骤：</p>
+                
+                <!-- Flex弹性布局容器：展示制作步骤卡片，实现自适应布局 -->
+                <div class="process-steps">
+                    <!-- 步骤卡片1：选布 -->
+                    <div class="step-card">
+                        <div class="step-num">01</div>
+                        <h3>选布</h3>
+                        <p style="text-indent: 0; font-size: 16px;">选用纯棉的白布、当地人通常称其为胚布。对折成宽25厘米的布条浸泡于冷水中数小时，去除布料杂质。随后将其彻底晾晒干净后卷在卷轴之上。</p>
+						<img src="image/选布.jpg" alt="选布">
+					</div>
+                    <!-- 步骤卡片2：雕版 -->
+                    <div class="step-card">
+                        <div class="step-num">02</div>
+                        <h3>雕版</h3>
+                        <p style="text-indent: 0; font-size: 16px;">选择不容易变形的梨木、枣木或榆木做成木板，需要雕刻的花样粘贴到木板上，雕刻刀从最外向内雕刻。雕刻完毕后统一编号，放入水中保存。</p>
+                        <img src="image/雕版.jpg" alt="雕版">
+					</div>
+                    <!-- 步骤卡片3：制靛 -->
+                    <div class="step-card">
+                        <div class="step-num">03</div>
+                        <h3>制靛</h3>
+                        <p style="text-indent: 0; font-size: 16px;">温州地区蓝夹缬的染料一般来源于“蓝草”，采摘之后再经过一系列的处理，从中提取出蓝夹缬得重要染料一一靛青。</p>
+						<img src="image/制靛.jpg" alt="制靛">
+					</div>
+                    <!-- 步骤卡片4：印染 -->
+                    <div class="step-card">
+                        <div class="step-num">04</div>
+						<h3>印染</h3>
+                        <p style="text-indent: 0; font-size: 16px;">在染缸里的水放到二分之一后循环加入水和靛青，直至可以完全没过雕版后等待发酵。</p>
+						<img src="image/印染.jpg" alt="印染">
+					</div>
+					<!-- 步骤卡片5：晾晒 -->
+					<div class="step-card">
+					    <div class="step-num">05</div>
+					    <h3>晾晒</h3>
+					    <p style="text-indent: 0; font-size: 16px;">将布从雕板上取下，平铺在河水中漂洗，然后放至柴灰中使其干透，或用排风扇吹干。</p>
+						<img src="image/晾晒.jpg" alt="晾晒">
+					</div>
+					<!-- 步骤卡片6：清洗 -->
+					<div class="step-card">
+					    <div class="step-num">06</div>
+					    <h3>清洗</h3>
+					    <p style="text-indent: 0; font-size: 16px;">等到布料干透之后打开雕版组取出染好的布料，放入清水中不断冲洗直到水中无蓝色，接着晾干处理便制作完成。</p>
+						<img src="image/清洗.jpg" alt="清洗">
+					</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 保护状况板块：id=protection用于导航定位，采用Sidebar侧边栏布局 -->
+        <section id="protection" class="page-section">
+            <!-- 保护状况头部：权威深色引用风格，突出守望与传承主题 -->
+            <div class="protect-header" style="font-family: 'Kaiti SC', 'KaiTi', serif;">
+                <h1>守望与传承</h1>
+                <hr>
+                <p style="color:#f5f5f5; text-align: center; text-indent: 0;">PROTECTION & INHERITANCE</p>
+            </div>
+
+            <div class="container">
+                <!-- 侧边栏布局容器：分为侧边栏（次要信息）和主内容区（核心信息） -->
+                <div class="protect-layout">
+                    <!-- 侧边栏：展示重点保护单位信息 -->
+                    <aside class="sidebar">
+                        <h3>重点保护单位</h3>
+                        <div class="museum-highlight">
+                            <h4 style="margin-bottom: 10px;">瑞安市采成蓝夹缬博物馆</h4>
+                            <p style="text-indent: 0; font-size: 14px; color: #ddd;">
+                                采成蓝夹缬博物馆位于浙江省温州市瑞安市马屿镇
+                            </p>
+							<p style="text-indent: 0; font-size: 14px; color: #ddd;">
+								这是国内首家蓝夹缬专题博物馆，由传承人王河生创办。
+							</p>
+                            <img src="image/museum.jpg" style="margin-top: 15px; border:1px solid #555;">
+                        </div>
+                        <br>
+                        <h4>联系馆方</h4>
+                        <p style="text-indent: 0; font-size: 14px; color: #ddd;">开放时间：周二至周日 9:00-17:00</p>
+                    </aside>
+
+                    <!-- 主文章区：展示蓝夹缬濒危状况与现代传承方式 -->
+                    <article class="main-article">
+                        <h2>濒危与抢救</h2>
+                        <div class="content-block">
+                            <p>蓝夹缬技艺的保护现状可谓喜忧参半。喜的是国家高度重视，2006年便将其列入首批国家级非遗名录，瑞安等地也建立了博物馆和传承基地。忧的是，随着老一辈艺人的凋零，掌握核心雕版和打靛技艺的人越来越少。</p>
+                            <p>瑞安市采成蓝夹缬博物馆的建立，是民间力量保护非遗的一个典范。馆长王河生不仅收藏了明清至民国时期的花版千余块，更致力于恢复完整的靛青种植和印染工艺，让蓝夹缬不再仅仅是博物馆里的陈列品，而是活态的技艺。</p>
+                        </div>
+
+                        <h2>现代传承方式</h2>
+                        <p>除了博物馆展示，传承方式也在发生改变：</p>
+                        <!-- 无序列表：列举现代传承的三种主要方式 -->
+                        <ul style="margin-left: 20px; list-style-type: disc; color: #444; font-size: 18px; line-height: 2;">
+                            <li><b>进校园：</b> 温州多所中小学开设了蓝夹缬体验课，让孩子们从小接触这一传统文化。</li>
+                            <li><b>文创开发：</b> 将蓝夹缬纹样应用于丝巾、靠垫、手袋等现代生活用品，通过商业化运作反哺技艺传承。</li>
+                            <li><b>学术研究：</b> 越来越多的高校学者开始深入研究蓝夹缬的文化基因，为其建立数字化档案。</li>
+                        </ul>
+                        
+                        <div style="margin-top: 30px;">
+                             <img src="image/protect.jpg" alt="非遗工坊">
+                             <p style="text-align: center; font-size: 14px; margin-top: 10px; text-indent: 0;">拾憩蓝夹缬工作坊</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 联系我们板块：id=contact用于导航定位，包含留言表单和文创产品展示 -->
+        <section id="contact" class="page-section">
+            <!-- 联系我们头部：简单样式，展示板块标题 -->
+             <div style="background: var(--paper-bg); padding: 50px 0; text-align: center; border-bottom: 1px solid #ddd;">
+                 <h2 style="border: none;">预约参观 / 交流合作</h2>
+             </div>
+             
+             <div class="container" style="margin-top: 50px;">
+                 <!-- 留言表单容器：用于用户提交咨询信息 -->
+                 <div class="contact-box">
+                     <!-- 表单：onsubmit阻止默认提交行为，弹出提交成功提示 -->
+                     <form onsubmit="event.preventDefault(); alert('提交成功！');">
+                         <div class="form-row">
+                             <label>您的姓名</label>
+                             <input type="text" placeholder="请输入姓名">
+                         </div>
+                         <div class="form-row">
+                             <label>联系邮箱</label>
+                             <input type="email" placeholder="example@email.com">
+                         </div>
+                         <div class="form-row">
+                             <label>留言内容</label>
+                             <textarea rows="5" placeholder="请填写您想咨询的内容..."></textarea>
+                         </div>
+                         <!-- 提交按钮 -->
+                         <button class="btn-submit">发送信息</button>
+                     </form>
+                 </div>
+             </div>
+			 <!-- 衍生文创产品展示区：展示蓝夹缬相关文创产品 -->
+			   <div class="container cultural-creative-wrap">
+			     <h3 class="cultural-creative-title">衍生文创产品</h3>
+			     <!-- 文创产品卡片容器：存放多个文创产品卡片 -->
+			     <div class="cultural-creative-list">
+			       <!-- 文创卡片1：非遗手作套装 -->
+			       <div class="cc-card">
+			         <img src="image/文创1.jpg" alt="非遗手作书签">
+			         <div class="cc-card-content">
+			           <h4>非遗手作套装</h4>
+			           <p>传统工艺打造，多款组合可选</p>
+			           <span class="cc-price">¥299/套</span>
+			         </div>
+			       </div>
+			       <!-- 文创卡片2：定制水桶包 -->
+			       <div class="cc-card">
+			         <img src="image/文创2.jpg" alt="定制水桶包">
+			         <div class="cc-card-content">
+			           <h4>定制水桶包</h4>
+			           <p>手工制作，可印专属logo</p>
+			           <span class="cc-price">¥89/个</span>
+			         </div>
+			       </div>
+			       <!-- 文创卡片3：非遗纹样帆布包 -->
+			       <div class="cc-card">
+			         <img src="image/文创3.jpg" alt="非遗纹样帆布包">
+			         <div class="cc-card-content">
+			           <h4>非遗纹样帆布包</h4>
+			           <p>环保材质，大容量设计</p>
+			           <span class="cc-price">¥89/个</span>
+			         </div>
+			       </div>
+				   <!-- 文创卡片4：蓝夹缬零钱包 -->
+				   <div class="cc-card">
+				     <img src="image/文创4.jpg" alt="蓝夹缬零钱包">
+				     <div class="cc-card-content">
+				       <h4>蓝夹缬零钱包</h4>
+				       <p>日常收纳，便携小包</p>
+				       <span class="cc-price">¥69/个</span>
+				     </div>
+				   </div>
+				   <!-- 文创卡片5：蓝夹缬鼠标垫 -->
+				   <div class="cc-card">
+				     <img src="image/文创5.jpg" alt="蓝夹缬鼠标垫<">
+				     <div class="cc-card-content">
+				       <h4>蓝夹缬鼠标垫</h4>
+				       <p>护腕防滑，加厚桌垫</p>
+				       <span class="cc-price">¥59/个</span>
+				     </div>
+				   </div>
+				   <!-- 文创卡片6：印花抽纸盒 -->
+				   <div class="cc-card">
+				     <img src="image/文创6.jpg" alt="印花抽纸盒">
+				     <div class="cc-card-content">
+				       <h4>印花抽纸盒</h4>
+				       <p>环保材质，轻松抽取无负担</p>
+				       <span class="cc-price">¥59/个</span>
+				     </div>
+				   </div>
+			     </div>
+			   </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚模块：展示网站版权信息 -->
+    <footer>
+        &copy; 2023 蓝夹缬非遗文化专题网站 | 传承 • 保护 • 创新
+    </footer>
+
+    <!-- Lightbox图片放大遮罩：用于图片点击放大预览 -->
+    <div id="lightbox">
+        <img id="lb-img" src="">
+        <!-- 关闭按钮：点击触发closeLightbox函数，关闭图片预览 -->
+        <div id="lightbox-close" onclick="closeLightbox()">× 关闭</div>
+    </div>
+
+    <!-- 引入外部JavaScript文件：用于实现页面交互功能（导航、图片放大、手风琴等） -->
+    <script src="script.js"></script>
+</body>
+</html>
